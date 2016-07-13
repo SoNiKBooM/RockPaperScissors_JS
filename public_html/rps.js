@@ -14,20 +14,20 @@ var total = 0;
 //Function for onclick event
 var rpsrun = function() {
 
-
+rps = ["rock","paper","scissors"];
 
 var userChoice = prompt("ROCK, PAPER OR SCISSORS?").toLowerCase();
 
 var AIchoice = Math.random();
 {
     if (AIchoice <= 0.33) {
-        AIchoice = "rock";
+        AIchoice = rps[0];
     }
     else if (AIchoice < 0.67) {
-        AIchoice = "paper";
+        AIchoice = rps[1];
     }
     else {
-        AIchoice = "scissors";
+        AIchoice = rps[2];
     }
 };
 
@@ -43,9 +43,9 @@ var compare = function (choice1, choice2)
    total++;
   } 
   
-   else if (choice1 === "rock")
+   else if (choice1 === rps[0])
   {
-      if (choice2 === "scissors")
+      if (choice2 === rps[2])
       {
           document.getElementById("demo").innerHTML = "ROCK wins!";
           rcount++;
@@ -59,9 +59,9 @@ var compare = function (choice1, choice2)
     }
   }
   
-  else if (choice1 === "paper")
+  else if (choice1 === rps[1])
   {
-      if (choice2 === "rock")
+      if (choice2 === rps[0])
       {
           document.getElementById("demo").innerHTML = "PAPER wins!";
           pcount++;
@@ -75,9 +75,9 @@ var compare = function (choice1, choice2)
     }
   }
   
-  else if (choice1 === "scissors")
+  else if (choice1 === rps[2])
   {
-      if (choice2 === "paper")
+      if (choice2 === rps[1])
       {
         document.getElementById("demo").innerHTML = "SCISSORS wins!";
         scount++;
